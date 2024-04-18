@@ -29,8 +29,8 @@ class Predictor(BasePredictor):
         with zipfile.ZipFile(local_path, "r") as zip_ref:
             zip_ref.extractall(out)
             model_name = weights = os.path.join(out, "model")
-            TransformersConverter(model_name, copy_files=[model_name + '/tokenizer_config.json', model_name + '/preprocessor_config.json']).convert(model_name + "/fast_model")
-            weights_path = os.path.join(model_name + "/fast_model") 
+            #TransformersConverter(model_name, copy_files=[model_name + '/tokenizer_config.json', model_name + '/preprocessor_config.json']).convert(model_name + "/fast_model")
+            weights_path = os.path.join(out) 
 
         self.model = WhisperModel(
                     weights_path,
