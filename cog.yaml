@@ -10,7 +10,7 @@ build:
     - "ffmpeg"
     
   python_packages:
-    - "faster-whisper==0.10.0"
+    - "faster-whisper==1.0.1"
     - "openai-whisper==20231117"
     
   run: 
