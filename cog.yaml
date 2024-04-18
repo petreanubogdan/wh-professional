@@ -1,8 +1,19 @@
 build:
   gpu: true
   python_version: "3.11"
+  
+  system_packages:
+    - "apt-transport-https"
+    - "ca-certificates"
+    - "gnupg"
+    - "curl"
+    - "ffmpeg"
+    
   python_packages:
     - "faster-whisper==0.10.0"
     - "openai-whisper==20231117"
+    
+  run: 
+    - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.0.3/pget" && chmod +x /usr/local/bin/pget
 
 predict: "predict.py:Predictor"
